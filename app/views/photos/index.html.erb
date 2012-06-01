@@ -1,0 +1,16 @@
+<div id="main">
+<h1>Photos</h1>
+<p class="photo-info">
+  width: 600px, height: 337px
+<p>
+<div id="photos">
+  <ul>
+  <% 1.upto 5 do |i| %>
+    <li>
+      <%=image_tag "/images/#{i}.jpg" %>
+    </li>
+  <% end %>
+  </ul>
+  
+</div>
+</div>

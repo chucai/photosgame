@@ -1,0 +1,32 @@
+$img_w: 600px;
+
+body{
+  background: url(/assets/bg.png) repeat fixed top;
+}
+
+#container{
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  
+  #photos {
+    width: $img_w;
+    margin: 10px auto;
+    height: auto;
+    overflow: hidden;
+    
+    ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li{
+        margin: 0;
+        display: block;
+        margin: 0;
+        padding: 0;
+        float: left;
+        width: $img_w;
+      }
+    }
+  }
+}
