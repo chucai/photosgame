@@ -1,12 +1,38 @@
+template = 
+  img_ul: "<ul> {{&img_list}} </ul>"
+  img_li: "<li> <img src=\"{{src}} \" width=\"600\" /> </li>"
+  
+start = true
+
 $ -> 
   width = 600
-  size = $("#photos ul li").length
+  size = img_urls.length
   speed = 400 
   i = 1
+  img_list = ""
   
-  $("#photos ul").width(width*size)
+  for url in img_urls
+    img = new Image()
+    img.src = url
+    if img.complete
+      view = src: img.src
+      output = Mustache.to_html(template["img_li"], view)
+      img_list += output
+    img.onload = () ->
+      view = src: img.src
+      output = Mustache.to_html(template["img_li"], view)
+      img_list += output
   
-  setInterval ->
-    i = (i+1) % size
-    $("#photos ul").css  "marginLeft": "-"+i*width+"px"
-  , speed
+  output = Mustache.render(template["img_ul"], { img_list: img_list })
+  
+  $("#photos").html(output)
+  
+  $("#photos ul").width( width*size )
+
+  sh = setInterval ->
+         if start
+           i = (i+1) % size
+           $("#photos ul").css  "marginLeft": "-"+i*width+"px"
+           start = false if i == 0
+       , speed
+        

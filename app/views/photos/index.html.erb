@@ -4,13 +4,12 @@
   width: 600px, height: 337px
 <p>
 <div id="photos">
-  <ul>
-  <% 1.upto 19 do |i| %>
-    <li>
-      <%=image_tag "/images/#{i}.bmp", :width => 600 %>
-    </li>
-  <% end %>
-  </ul>
-  
+  正在加载图片，请稍等... ...
 </div>
 </div>
+  <script type="text/javascript">
+    var img_urls = [];
+    <%- 1.upto 19 do |i| -%>
+      img_urls.push("<%="http://localhost:3000/photos/#{i}.bmp" %>");
+    <%- end -%>
+  </script>
