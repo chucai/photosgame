@@ -229,7 +229,12 @@ zh:
       <<: *errors
     models:
       user: 用户
+      image: 图片
     attributes:
       user:
         email: 邮箱
         password: 密码
+      image:
+        file: 文件
+        user_id: 用户
+        order: 顺序

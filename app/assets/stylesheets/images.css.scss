@@ -1,0 +1,12 @@
+#container{
+  .clearfix { clear:both;}
+  #images-pane{
+    width: 100%;
+    clear: both;
+    .pane{
+      width: 160px;
+      padding: 5px 3px;
+      float:left;
+    }
+  }
+}

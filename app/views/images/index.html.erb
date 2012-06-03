@@ -1,0 +1,16 @@
+<p>
+<h1>图片列表</h1>  <%= link_to '上传图片', new_image_path %>
+</p>
+<div id="images-pane">
+<% @images.each do |image| %>
+<div class="pane">
+  <%=image_tag image.file.url("thumb"), :width => 150 %>
+  <p>
+    <%= link_to '修改', edit_image_path(image) %>
+    <%= link_to '删除', image, confirm: '确定删除?', method: :delete %>
+  </p>
+</div>
+<% end %>
+</div>
+<div class="clearfix">
+
