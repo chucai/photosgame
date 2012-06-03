@@ -3,6 +3,7 @@ template =
   img_li: "<li> <img src=\"{{src}} \" width=\"600\" /> </li>"
   
 start = true
+img_urls = gon.images
 
 $ -> 
   width = 600
@@ -31,8 +32,8 @@ $ ->
 
   sh = setInterval ->
          if start
-           i = (i+1) % size
            $("#photos ul").css  "marginLeft": "-"+i*width+"px"
            start = false if i == 0
+           i = (i+1) % size
        , speed
         

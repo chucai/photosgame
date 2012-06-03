@@ -124,7 +124,7 @@ DEPENDENCIES
   carrierwave (= 0.6.2)
   coffee-rails (~> 3.2.1)
   devise (= 2.1.0)
-  gon
+  gon (= 3.0.4)
   jquery-rails
   mini_magick (= 3.3)
   rails (= 3.2.3)
