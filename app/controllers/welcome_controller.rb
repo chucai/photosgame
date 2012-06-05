@@ -1,5 +1,9 @@
 class WelcomeController < ApplicationController
   def index
-    gon.images = Album.first.images.map { |image| image.file.url('main') }
+    if album = Album.first
+      gon.images = album.images.map { |image| image.file.url('main') }
+	else
+	  gon.images = []
+	end
   end
 end
