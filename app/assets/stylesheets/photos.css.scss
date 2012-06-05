@@ -3,10 +3,66 @@ $notice_color: #FFF6BF;
 
 body{
   background: url(/assets/bg.png) repeat fixed top;
+  margin: 0;
+  padding: 0;
+  
+  #header {
+    height: 80px;
+    background-color: #393937;
+    .container{
+      @include container;
+      #log{
+        color: $header-color;
+        @include column(5);
+        @include append(3);
+      }
+      .navigate{
+        @include column(12);
+        height: 100px;
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          li{
+            @include column(5);
+            margin-top: 30px;
+            padding: 5px;
+            font-size: 18px;
+            text-align: center;
+            
+            a{
+            /*border: 1px solid $blueprint-border-color ;*/
+              display: block;
+              padding: 3px;
+              width: span(4);
+              text-decoration: none;
+              color: #ffffff ;
+              @include no-link-icon;
+            }
+          }
+        }
+      }
+      .info{
+        color: $info-color;
+        @include column(3);
+      }
+    
+    }
+  }
+  
+  #footer{
+    margin-top:50px;
+    @include column(24);
+  }
+  
+  a{
+    color: $link-color;
+  }
+  
 }
 
 #container{
-  width: 960px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   
@@ -16,24 +72,43 @@ body{
     color: #514721;
   }
   
-  #photos {
-    width: $img_w;
-    margin: 10px auto;
-    height: auto;
-    overflow: hidden;
-    
-    ul{
-      list-style-type: none;
-      margin: 0;
+  .container{
+    @include container;
+    #main {
+      @include column(24,true);
+      @include clearfix;
+      margin: 0 auto;
       padding: 0;
-      li{
-        margin: 0;
-        display: block;
-        margin: 0;
-        padding: 0;
-        float: left;
+    
+      #photos {
         width: $img_w;
+        margin: 10px auto;
+        height: auto;
+        overflow: hidden;
+        
+        ul{
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          li{
+            margin: 0;
+            display: block;
+            margin: 0;
+            padding: 0;
+            float: left;
+            width: $img_w;
+          }
+        }
+      }
+      
+      .block{
+        margin-top: 30px;
+        @include column(7);
+        @include append(1);
+        background-color: $blueprint-background-color;
+        padding: 3px;
       }
     }
   }
+  
 }

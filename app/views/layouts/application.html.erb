@@ -9,27 +9,47 @@
 </head>
 <body>
 <div id="container">
-  <div id="header">
-  <% if user_signed_in? %>
-  欢迎你, <%=current_user.email %>
-  <%=link_to "注销", destroy_user_session_path, :method => :delete %>
-  <% else %>
-  <%=link_to "注册", new_user_registration_path %>
-  <%=link_to "登录", new_user_session_path %>
-  <% end %>
+  <div id= "header">
+    <div class="container">
+      <div id="log">
+        <h1>PhotosGame</h1>
+      </div>
+    <div class="navigate">
+      <ul>
+        <li><%=link_to "首页", root_url %></li>
+        <li><%=link_to "关于PhotosGame", root_url %></li>
+      </ul>
+    </div>
+    <div class='info'>
+     <% if user_signed_in? %>
+     欢迎你, <%=current_user.email %>
+     <%=link_to "注销", destroy_user_session_path, :method => :delete %>
+     <% else %>
+     <%=link_to "注册", new_user_registration_path %>
+     <%=link_to "登录", new_user_session_path %>
+     <% end %>
+    </div>
   </div>
+  </div>
+  <div class="container">
 <%- if notice || alert -%>
   <div class="notice">
     <%= notice %>
     <%= alert %>
   </div>
 <%- end -%>
-
+  <div id="main">
 <%= yield %>
+</div>
 
-<div id="footer">
+  <div id="footer">
   版权所有@2012
 </div>
+</div>
+
+
+
+
 </div>
 </body>
 </html>
