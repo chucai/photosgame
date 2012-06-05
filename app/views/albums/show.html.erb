@@ -1,0 +1,19 @@
+
+<p>
+  <b>Desc:</b>
+  <%= @album.desc %>
+</p>
+
+<p>
+  <b>Private:</b>
+  <%= @album.private %>
+</p>
+
+<p>
+  <b>Token:</b>
+  <%= @album.token %>
+</p>
+
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120603090600) do
+ActiveRecord::Schema.define(:version => 20120605082515) do
+
+  create_table "albums", :force => true do |t|
+    t.string   "desc"
+    t.integer  "private",    :default => 0
+    t.string   "token"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
 
   create_table "images", :force => true do |t|
     t.string   "file"
@@ -19,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20120603090600) do
     t.integer  "order"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "album_id"
   end
 
   create_table "users", :force => true do |t|

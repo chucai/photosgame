@@ -1,0 +1,29 @@
+<h2>电影集列表</h2>
+<%= link_to '创建新电影集', new_album_path %>
+<table>
+  <tr>
+    <th>描述</th>
+    <th>是否隐私</th>
+    <th>唯一URL</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @albums.each do |album| %>
+  <tr>
+    <td><%= album.desc %></td>
+    <td><%= album.private %></td>
+    <td><%= album.url %></td>
+    <td><%= link_to '显示', album_images_path(album) %></td>
+    <td><%= link_to '修改', edit_album_path(album) %></td>
+    <td><%= link_to '删除', album, confirm: '肯定删除?', method: :delete %></td>
+    <td><%= link_to "上传图片",  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

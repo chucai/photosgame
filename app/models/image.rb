@@ -6,5 +6,6 @@ class Image < ActiveRecord::Base
   validates :file, :presence => true
   
   belongs_to :user
+  belongs_to :album
   
 end

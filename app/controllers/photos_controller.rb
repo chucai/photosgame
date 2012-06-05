@@ -1,7 +1,10 @@
 class PhotosController < ApplicationController
   
   def index
-    gon.images = Image.where("user_id = 1").all.map { |image|  image.file.url('main') }
+    token = params[:token]
+    album = Album.find_by_token(token)
+    images = album.images
+    gon.images = images.map { |image|  image.file.url('main') }
   end
   
 end

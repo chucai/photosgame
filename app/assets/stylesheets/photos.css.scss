@@ -25,7 +25,7 @@ body{
           padding: 0;
           li{
             @include column(5);
-            margin-top: 30px;
+            margin-top: 20px;
             padding: 5px;
             font-size: 18px;
             text-align: center;
@@ -33,11 +33,10 @@ body{
             a{
             /*border: 1px solid $blueprint-border-color ;*/
               display: block;
-              padding: 3px;
+              padding: 8px 3px;
               width: span(4);
               text-decoration: none;
               color: #ffffff ;
-              @include no-link-icon;
             }
           }
         }
@@ -103,11 +102,14 @@ body{
       
       .block{
         margin-top: 30px;
-        @include column(7);
-        @include append(1);
         background-color: $blueprint-background-color;
         padding: 3px;
+        height: 150px;
       }
+      
+      .block_left { @include column(7);}
+      .block_center { @include column(8); }
+      .block_right { @include column(7); @include last; }
     }
   }
   

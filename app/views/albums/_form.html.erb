@@ -1,0 +1,25 @@
+<%= form_for(@album) do |f| %>
+  <% if @album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@album.errors.count, "error") %> 引起数据无法保存:</h2>
+      <ul>
+      <% @album.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_area :desc, :rows => 10, :cols => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :private %>
+    <%= check_box_tag :private %>
+    Tips: 如果设置隐私，那么别人将无法观看您的图片。
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

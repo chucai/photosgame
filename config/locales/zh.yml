@@ -229,11 +229,16 @@ zh:
       <<: *errors
     models:
       user: 用户
+      album: 电影
       image: 图片
     attributes:
       user:
         email: 邮箱
         password: 密码
+      album:
+        desc: 描述
+        private: 隐私
+        token: 唯一码
       image:
         file: 文件
         user_id: 用户

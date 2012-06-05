@@ -1,12 +1,29 @@
 <p>
-<h1>图片列表</h1>  <%= link_to '上传图片', new_image_path %>
+  <b>电影描述:</b>
+  <%= @album.desc %>
+</p>
+
+<p>
+  <b>隐私状态:</b>
+  <%= @album.private %>
+</p>
+
+<p>
+  <b>唯一地址:</b>
+  <%= @album.url %>
+</p>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>
+<p>
+<h1>图片列表</h1>  <%= link_to '上传图片', new_album_image_path(@album) %>
 </p>
 <div id="images-pane">
 <% @images.each do |image| %>
 <div class="pane">
   <%=image_tag image.file.url("thumb"), :width => 150 %>
   <p>
-    <%= link_to '修改', edit_image_path(image) %>
+    <%= link_to '修改', edit_album_image_path(@album, image) %>
     <%= link_to '删除', image, confirm: '确定删除?', method: :delete %>
   </p>
 </div>
