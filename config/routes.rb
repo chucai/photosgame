@@ -6,10 +6,10 @@ Photosgame::Application.routes.draw do
     resources :images
   end
   
+  devise_for :users
 
   match "/:token" => "photos#index"
   
-  devise_for :users
 
   root :to => 'welcome#index'
 
